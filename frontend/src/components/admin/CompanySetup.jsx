@@ -45,12 +45,12 @@ const CompanySetup = () => {
             formData.append("file", input.file);
         }
         try {
-           // setLoading(true);
-             const token = localStorage.getItem("token");
+           setLoading(true);
+            
             const res = await axios.put(`${COMPANY_API_END_POINT}/update/${params.id}`, formData, {
                 headers: {
-                   // 'Content-Type': 'multipart/form-data'
-                      Authorization: `Bearer ${token}`
+                   'Content-Type': 'multipart/form-data'
+                      
                 },
                 withCredentials: true
             });
